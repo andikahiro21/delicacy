@@ -1,0 +1,63 @@
+.favorite {
+  background-color: #f0f7ff;
+  height: 100vh;
+}
+.favorite .linkmoreRecipies {
+  text-decoration: none;
+  color: #404040;
+}
+.favorite .containerCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  gap: 3%;
+}
+.favorite .containerCard .card {
+  border: 2px solid #ffffff;
+  box-shadow: 2px 2px 10px 0px lightgrey;
+  width: 214.885px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.favorite .containerCard .card .imgCont img {
+  width: 96.037px;
+  height: 94.958px;
+  border-radius: 50%;
+  position: absolute;
+  top: -25%;
+  right: 27%;
+}
+.favorite .containerCard .card .titleCard h1 {
+  font-size: 13px;
+  width: 90%;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 45%;
+  text-align: center;
+}
+.favorite .containerCard .card .btnContainer {
+  padding-top: 4%;
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+.favorite .containerCard .card .btnContainer button {
+  cursor: pointer;
+  width: 124.856px;
+  height: 29.63px;
+  border-radius: 6px;
+  background: none;
+  border: 2px solid #408eba;
+  color: #408eba;
+}
+.favorite .containerCard .card .btnContainer button:hover {
+  filter: brightness(90%);
+}/*# sourceMappingURL=favorite.css.map */

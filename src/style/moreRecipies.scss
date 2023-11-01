@@ -1,0 +1,62 @@
+@import "./variable.scss";
+@import "./component.scss";
+@import url("https://fonts.google.com/specimen/Roboto");
+
+.moreRecipies {
+  .linkmoreRecipies {
+    text-decoration: none;
+    color: $textBlack;
+  }
+  color: $textBlack;
+  background-color: $mainColor;
+  height: 40vh;
+  padding-left: 3.5%;
+  .title {
+    h1 {
+      font-size: 23.978px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+  .containerCard {
+    display: flex;
+    margin-top: 3%;
+    gap: 3%;
+
+    .card {
+      @include border;
+      @include shadow;
+      width: 142.437px;
+      height: 130.567px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+      .imgCont {
+        img {
+          width: 96.037px;
+          height: 94.958px;
+          border-radius: 50%;
+          position: absolute;
+          top: -25%;
+          right: 18%;
+        }
+      }
+      .titleCard {
+        h1 {
+          font-size: 13px;
+          width: 90%;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          font-family: $roboto;
+          display: flex;
+          justify-content: center;
+          margin-top: 65%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

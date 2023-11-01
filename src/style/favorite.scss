@@ -1,0 +1,71 @@
+@import "./component.scss";
+@import "./variable.scss";
+
+.favorite {
+  .linkmoreRecipies {
+    text-decoration: none;
+    color: $textBlack;
+  }
+  background-color: $mainColor;
+  height: 100vh;
+  .containerCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    gap: 3%;
+
+    .card {
+      @include border;
+      @include shadow;
+      width: 214.885px;
+      height: 180px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+      .imgCont {
+        img {
+          width: 96.037px;
+          height: 94.958px;
+          border-radius: 50%;
+          position: absolute;
+          top: -25%;
+          right: 27%;
+        }
+      }
+      .titleCard {
+        h1 {
+          font-size: 13px;
+          width: 90%;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          font-family: $roboto;
+          display: flex;
+          justify-content: center;
+          margin-top: 45%;
+          text-align: center;
+        }
+      }
+      .btnContainer {
+        padding-top: 4%;
+        display: flex;
+        justify-content: center;
+        gap: 10%;
+        button {
+          cursor: pointer;
+          width: 124.856px;
+          height: 29.63px;
+          border-radius: 6px;
+          background: none;
+          border: 2px solid $secondaryColor;
+          color: $secondaryColor;
+        }
+        button:hover {
+          @include hover;
+        }
+      }
+    }
+  }
+}

@@ -1,14 +1,26 @@
 import { useState } from "react";
-import Home from "./pages/home";
+import Home from "./pages/homeCard";
 import Navbar from "./pages/navbar";
+import MoreRecipies from "./pages/moreRecipies";
+import "./style/app.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [activeCategory, setActiveCategory] = useState("Beef");
 
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+  };
   return (
     <div className="app">
-      <Navbar />
-      <Home />
+      <div className="nav">
+        <Navbar activeCategory={activeCategory} handleCategoryChange={handleCategoryChange} />
+      </div>
+      <div className="homeApp">
+        <Home activeCategory={activeCategory} />
+      </div>
+      <div className="moreRecipies">
+        <MoreRecipies />
+      </div>
     </div>
   );
 }

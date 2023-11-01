@@ -1,0 +1,109 @@
+@import "./component.scss";
+@import "./variable.scss";
+.detail {
+  background-color: $mainColor;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
+  .cardContainer {
+    .card {
+      @include shadow;
+      border: 10px solid $white;
+      min-width: 606.446px;
+      max-width: 606.446px;
+      margin-left: 2%;
+      height: 518.194px;
+      border-radius: 10px;
+      padding: 15px 0px 0px 12px;
+      position: relative;
+      display: flex;
+      .description {
+        .header {
+          width: 60%;
+          h1 {
+            font-size: 20px;
+            font-weight: 800;
+          }
+          p {
+            font-size: 14px;
+            margin-top: 3%;
+            font-family: $roboto;
+            line-height: 130%;
+            max-height: 153px;
+            overflow-y: scroll;
+          }
+        }
+        .ingredients {
+          padding-top: 5%;
+          h1 {
+            font-size: 20px;
+            font-weight: 800;
+            color: $textGray;
+          }
+          .ingContainer {
+            display: grid;
+            grid-template-columns: auto auto;
+            width: 70%;
+            .ingCard {
+              font-family: $roboto;
+              display: flex;
+              align-items: center;
+              gap: 3%;
+              margin-top: 5%;
+              .ingImg {
+                @include border;
+                @include shadow;
+                padding: 8px 15px 8px 15px;
+                width: fit-content;
+                border-radius: 10px;
+                img {
+                  width: 26px;
+                }
+              }
+              .ingDesc {
+                h1 {
+                  font-size: 12px;
+                  color: $textBlack;
+                  font-weight: 600;
+                }
+                p {
+                  font-size: 9px;
+                  color: $textGray;
+                  margin-top: 10%;
+                }
+              }
+            }
+          }
+        }
+        .btnContainer {
+          padding-top: 4%;
+          display: flex;
+          gap: 10%;
+          button {
+            cursor: pointer;
+            width: 150px;
+            height: 35px;
+            border-radius: 6px;
+            background: none;
+            border: 2px solid $secondaryColor;
+            color: $secondaryColor;
+          }
+          button:hover {
+            @include hover;
+          }
+        }
+      }
+      .imgContainer {
+        img {
+          position: absolute;
+          right: -40%;
+          top: 10%;
+          width: 400px;
+          height: 400px;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}
