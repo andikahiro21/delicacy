@@ -7,8 +7,11 @@ import "../style/detail.css";
 function Detail() {
   const { id } = useParams();
   const [recipiesDisplay, setRecipiesDisplay] = useState({});
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    setFavorites(savedFavorites);
     const fetchRecipies = async () => {
       try {
         const data = await callAPI({
@@ -41,6 +44,20 @@ function Detail() {
       }
     }
   }
+  const isFavorite = favorites.some((favorite) => favorite.idMeal === id);
+  const handleAddToFavorites = (data) => {
+    const isAlreadyAdded = favorites.some((favorite) => favorite.idMeal === data.idMeal);
+
+    if (isAlreadyAdded) {
+      const updatedFavorites = favorites.filter((favorite) => favorite.idMeal !== data.idMeal);
+      setFavorites(updatedFavorites);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    } else {
+      const updatedFavorites = [...favorites, data];
+      setFavorites(updatedFavorites);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    }
+  };
 
   return (
     <div className="detail">
@@ -68,8 +85,7 @@ function Detail() {
               </div>
             </div>
             <div className="btnContainer">
-              <button>Detail</button>
-              <button>Add To Favorite</button>
+              <button onClick={() => handleAddToFavorites(recipe)}>{isFavorite ? "Remove Favorite" : "Add To Favorite"}</button>
             </div>
           </div>
           <div className="imgContainer">
